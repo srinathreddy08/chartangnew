@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple AngularJS Project</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">My App</div>
+            <ul class="nav-links">
+                <li><a href="#!/">Home</a></li>
+                <li><a href="#!/products">Products</a></li>
+                <li><a href="#!/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div ng-view></div>
+        
+    </div>
+
+    <!-- Dependencies -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/components/home/home.controller.js"></script>
+    <script src="app/components/products/products.controller.js"></script>
+    <script src="app/components/about/about.controller.js"></script>
+    <script src="app/services/products.service.js"></script>
+</body>
+</html>

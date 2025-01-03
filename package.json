@@ -1,0 +1,16 @@
+{
+  "name": "simple-angular",
+  "version": "1.0.0",
+  "description": "Simple AngularJS Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -a localhost -p 8000 -c-1"
+  },
+  "dependencies": {
+    "angular": "^1.8.3",
+    "angular-route": "^1.8.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

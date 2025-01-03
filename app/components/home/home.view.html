@@ -1,0 +1,22 @@
+<div class="page-content">
+    <div class="home-container">
+        <h1 class="home-title">{{vm.title}}</h1>
+        <p class="home-message">{{vm.message}}</p>
+        
+        <div class="highlights-section">
+            <h2>What Makes Us Special</h2>
+            <div class="highlights">
+                <div class="highlight-card" ng-repeat="highlight in vm.highlights">
+                    <h3 class="highlight-title">{{highlight.title}}</h3>
+                    <p class="highlight-description">{{highlight.description}}</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Get Started Today!</h2>
+            <p>{{vm.cta}}</p>
+            <a href="#/products" class="cta-button">Explore Products</a>
+        </div>
+    </div>
+</div>
