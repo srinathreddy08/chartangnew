@@ -1,15 +1,41 @@
-<div class="products-grid">
-    <div class="product-card" ng-repeat="product in vm.products">
-        <div class="product-image">
-            <img ng-src="{{product.image}}" alt="{{product.name}}">
+<div class="products-page">
+    <div class="products-header">
+        <h1 class="products-title">{{vm.title}}</h1>
+        <div class="view-controls">
+            <input type="text" ng-model="vm.filterText" placeholder="Search products..." class="search-input">
+            <button class="view-toggle" ng-click="vm.toggleView()">
+                <span ng-if="vm.viewType === 'grid'">Show Cards</span>
+                <span ng-if="vm.viewType === 'cards'">Show Grid</span>
+            </button>
         </div>
-        <div class="product-details">
-            <h3>{{product.name}}</h3>
-            <p>{{product.description}}</p>
-            <span class="category">{{product.category}}</span>
-            <span class="price">${{product.price}}</span>
-            <span class="rating">⭐ {{product.rating}}</span>
-            <button class="buy-now-button">Buy Now</button>
+    </div>
+    
+    <!-- UI Grid Table View -->
+    <div class="grid-container" ng-show="vm.viewType === 'grid'">
+        <div ui-grid="vm.gridOptions" 
+             ui-grid-pagination 
+             ui-grid-selection 
+             ui-grid-resize-columns 
+             class="products-grid">
+        </div>
+    </div>
+
+    <!-- Cards View -->
+    <div class="products-cards" ng-show="vm.viewType === 'cards'">
+        <div class="product-card" ng-repeat="product in vm.products | filter:vm.filterText">
+            <div class="product-image">
+                <img ng-src="{{product.image || '/assets/images/placeholder.jpg'}}" alt="{{product.name}}">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">{{product.name}}</h3>
+                <p class="product-description">{{product.description}}</p>
+                <span class="category">{{product.category}}</span>
+                <div class="price-rating">
+                    <span class="price">${{product.price}}</span>
+                    <span class="rating">⭐ {{product.rating}}</span>
+                </div>
+                <button class="buy-now-button" ng-click="vm.buyProduct(product)">Buy Now</button>
+            </div>
         </div>
     </div>
 </div>
