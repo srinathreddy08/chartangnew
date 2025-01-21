@@ -7,25 +7,11 @@
                    ng-model-options="{ debounce: 300 }"
                    class="search-input" 
                    placeholder="Search products...">
-            <button class="view-toggle" ng-click="vm.toggleView()">
-                <span ng-if="vm.viewType === 'grid'">Show Cards</span>
-                <span ng-if="vm.viewType === 'cards'">Show Grid</span>
-            </button>
         </div>
     </div>
     
-    <!-- UI Grid Table View -->
-    <div class="grid-container" ng-show="vm.viewType === 'grid'">
-        <div ui-grid="vm.gridOptions" 
-             ui-grid-pagination 
-             ui-grid-selection 
-             ui-grid-resize-columns 
-             class="products-grid">
-        </div>
-    </div>
-
     <!-- Cards View -->
-    <div class="products-cards" ng-show="vm.viewType === 'cards'">
+    <div class="products-cards">
         <div class="product-card" ng-repeat="product in vm.products | filter:vm.filterText">
             <div class="product-image">
                 <img ng-src="{{product.image || '/assets/images/placeholder.jpg'}}" alt="{{product.name}}">

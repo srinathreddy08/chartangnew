@@ -179,30 +179,7 @@ nav {
 }
 
 /* UI Grid Styles */
-.grid-container {
-    height: 600px;
-    width: 100%;
-    margin: 20px 0;
-}
 
-.ui-grid {
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-}
-
-.ui-grid-header-cell {
-    background-color: var(--primary-color) !important;
-    color: white !important;
-    font-weight: 500;
-}
-
-.ui-grid-row:nth-child(odd) .ui-grid-cell {
-    background-color: #f8f9fa;
-}
-
-.ui-grid-row:hover .ui-grid-cell {
-    background-color: #e3f2fd;
-}
 
 /* Product Cards */
 .products-cards {
@@ -383,32 +360,6 @@ nav {
 .p-1 { padding: 1rem; }
 .p-2 { padding: 2rem; }
 /* View Toggle Button */
-.view-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.view-toggle-btn {
-    padding: 8px 16px;
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.view-toggle-btn:hover {
-    background-color: #1976D2;
-}
-
-/* Grid View */
-.grid-view {
-    height: 600px;
-    width: 100%;
-}
 
 /* Card View */
 .products-cards {
