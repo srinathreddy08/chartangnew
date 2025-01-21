@@ -1,0 +1,33 @@
+<div class="page-content">
+    <div class="charts-container">
+        <h2 class="charts-title">Product Price Analysis</h2>
+        
+        <!-- Bar Chart -->
+        <div class="chart-section">
+            <h3>Average Price by Category</h3>
+            <div class="chart-wrapper">
+                <canvas class="chart chart-bar"
+                        chart-data="vm.data"
+                        chart-labels="vm.labels"
+                        chart-series="vm.series"
+                        chart-options="vm.barOptions"
+                        chart-colors="vm.colors">
+                </canvas>
+            </div>
+        </div>
+
+        <!-- Line Chart -->
+        <div class="chart-section">
+            <h3>Price Trends</h3>
+            <div class="chart-wrapper">
+                <canvas class="chart chart-line"
+                        chart-data="vm.lineData"
+                        chart-labels="vm.lineLabels"
+                        chart-series="vm.lineSeries"
+                        chart-options="vm.lineOptions"
+                        chart-colors="vm.lineColors">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div> 

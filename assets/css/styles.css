@@ -515,3 +515,75 @@ nav {
         grid-template-columns: 1fr;
     }
 }
+
+/* Add these styles at the end of your existing CSS file */
+
+
+
+.chart-button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+}
+
+.charts-container {
+    padding: 2rem;
+    background-color: var(--background-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.charts-title {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 2rem;
+}
+
+.chart-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.chart-section {
+    margin-bottom: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.chart-section h2 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 400px;
+    margin: 20px 0;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .chart-sections {
+        grid-template-columns: 1fr;
+    }
+}

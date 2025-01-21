@@ -40,7 +40,11 @@
             paginationPageSize: 10,
             data: vm.products,
             columnDefs: [
-                { field: 'name', displayName: 'Product Name' },
+                { 
+                    field: 'name', 
+                    displayName: 'Product Name',
+                    filterHeaderTemplate: '<div class="ui-grid-filter-container"><input type="text" ng-model="grid.appScope.vm.filterText" class="ui-grid-filter-input"></div>'
+                },
                 { field: 'description', displayName: 'Description' },
                 { field: 'category', displayName: 'Category' },
                 { 

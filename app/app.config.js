@@ -17,6 +17,11 @@
                 controller: 'ProductsController',
                 controllerAs: 'vm'
             })
+            .when('/price-analysis', {
+                templateUrl: 'app/components/chart/chart.view.html',
+                controller: 'ChartController',
+                controllerAs: 'vm'
+            })
             .when('/about', {
                 templateUrl: 'app/components/about/about.view.html',
                 controller: 'AboutController',

@@ -2,7 +2,11 @@
     <div class="products-header">
         <h1 class="products-title">{{vm.title}}</h1>
         <div class="view-controls">
-            <input type="text" ng-model="vm.filterText" placeholder="Search products..." class="search-input">
+            <input type="text" 
+                   ng-model="vm.filterText" 
+                   ng-model-options="{ debounce: 300 }"
+                   class="search-input" 
+                   placeholder="Search products...">
             <button class="view-toggle" ng-click="vm.toggleView()">
                 <span ng-if="vm.viewType === 'grid'">Show Cards</span>
                 <span ng-if="vm.viewType === 'cards'">Show Grid</span>
