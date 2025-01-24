@@ -55,7 +55,7 @@ p {
 
 /* Navigation */
 nav {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: linear-gradient(135deg, #0b4d45, #0b4d45); /* Tailwind teal-500 to teal-600 */
     padding: 1rem;
     position: sticky;
     top: 0;
@@ -73,31 +73,35 @@ nav {
 }
 
 .logo {
-    color: var(--background-white);
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
-    color: var(--background-white);
+    color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    transition: all var(--transition-speed);
+    border-radius: 0.375rem;
+    transition: all 0.3s;
     font-weight: 500;
 }
 
 .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #0f766e; /* Tailwind teal-700 */
+    transform: translateY(-2px);
+}
+
+.nav-links .active {
+    background-color: #0f766e; /* Tailwind teal-700 */
     transform: translateY(-2px);
 }
 
@@ -525,6 +529,7 @@ nav {
 .chart-wrapper {
     position: relative;
     height: 400px;
+    width: 100%;
     margin: 20px 0;
 }
 
@@ -537,4 +542,31 @@ h3 {
     .chart-sections {
         grid-template-columns: 1fr;
     }
+}
+
+/* Navbar specific styles */
+.nav-links .active {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.chart-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.charts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }

@@ -1,0 +1,14 @@
+<nav>
+    <div class="nav-container">
+        <div class="logo">My App</div>
+        <ul class="nav-links">
+            <li ng-repeat="item in vm.navItems">
+                <a href="javascript:void(0)" 
+                   ng-click="vm.navigate(item.path)"
+                   ng-class="{ 'active': vm.isActive(item.path) }">
+                    {{item.label}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav> 

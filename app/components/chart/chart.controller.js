@@ -10,32 +10,19 @@
     function ChartController(chartService) {
         var vm = this;
         
-        // Colors for charts
-        var colors = {
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.6)',
-                'rgba(255, 99, 132, 0.6)',
-                'rgba(75, 192, 192, 0.6)',
-                'rgba(255, 206, 86, 0.6)',
-                'rgba(153, 102, 255, 0.6)',
-                'rgba(255, 159, 64, 0.6)'
-            ],
-            borderColor: [
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 99, 132, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ]
-        };
-
-        // Bar Chart
+        // Initialize chart data
         var priceData = chartService.getPriceData();
-        vm.labels = priceData.labels;
         vm.data = [priceData.data];
+        vm.labels = priceData.labels;
         vm.series = ['Average Price by Category'];
-        
+
+        // Get price trends data
+        var trendData = chartService.getPriceTrends();
+        vm.lineData = trendData.data;
+        vm.lineLabels = trendData.labels;
+        vm.lineSeries = ['Price Trends'];
+
+        // Chart options
         vm.barOptions = {
             scales: {
                 yAxes: [{
@@ -47,35 +34,11 @@
                     }
                 }]
             },
-            tooltips: {
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        return 'Average Price: $' + tooltipItem.yLabel.toFixed(2);
-                    }
-                }
-            },
             responsive: true,
             maintainAspectRatio: false
         };
 
-        vm.colors = [colors.backgroundColor];
-        vm.borderColors = [colors.borderColor];
-
-        
-
-        // Line Chart
-        var trendData = chartService.getPriceTrends();
-        vm.lineLabels = trendData.labels;
-        vm.lineData = trendData.data;
-        vm.lineSeries = ['Product Prices'];
         vm.lineOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            elements: {
-                line: {
-                    tension: 0.3
-                }
-            },
             scales: {
                 yAxes: [{
                     ticks: {
@@ -85,15 +48,21 @@
                         }
                     }
                 }]
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
         };
-        vm.lineColors = [{
-            backgroundColor: 'rgba(54, 162, 235, 0.2)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            pointBackgroundColor: 'rgba(54, 162, 235, 1)',
-            pointBorderColor: '#fff',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(54, 162, 235, 1)'
-        }];
+
+        // Chart colors
+        vm.colors = [
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(255, 206, 86, 0.6)'
+        ];
+
+        vm.lineColors = [
+            'rgba(75, 192, 192, 1)'
+        ];
     }
 })(); 
